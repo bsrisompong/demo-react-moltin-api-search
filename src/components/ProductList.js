@@ -10,6 +10,7 @@ class ProductList extends React.Component {
 
   componentDidMount() {
     this.fetchData()
+    
   }
 
   componentDidUpdate(prevProps) {
@@ -22,7 +23,8 @@ class ProductList extends React.Component {
   fetchData = async () => {
   const { search } = this.props
   const newsearch = search.split(' ').join('-')
-  const res = await request.get('/products?filter=like(sku,*'+newsearch+'*)')
+  const res = await request.get(`/products?filter=like(sku,*${newsearch}*)`)
+  // const res = await request.get(`/products?filter=like(sku,*${search}*)`)
     console.log(res)
     const data =  res.data.data.map(item => {
       return {

@@ -21,7 +21,7 @@ class App extends React.Component {
   onChange = (e) => {
     this.setState({
       value: e.target.value,
-      search: this.state.value,
+      //search: this.state.value,
     })
   }
 
